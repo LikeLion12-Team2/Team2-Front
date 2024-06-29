@@ -1,0 +1,15 @@
+@import "reset.css";
+
+/*Components*/
+@import "components/nav-bar.css";
+
+/*Screens*/
+@import "screens/style.css";
+
+/* body {
+  font-family: "Ubuntu", sans-serif;
+} */
+
+/* .main-screen {
+  padding: 0px var(--horizontal-space);
+} */
