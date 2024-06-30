@@ -1,10 +1,10 @@
 @import "reset.css";
 
 /*Components*/
-@import "components/nav-bar.css";
+@import "components/chaemin/nav-bar.css";
+@import "components/chaemin/width.css";
 
 /*Screens*/
-@import "screens/style.css";
 
 /* body {
   font-family: "Ubuntu", sans-serif;
