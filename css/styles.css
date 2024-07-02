@@ -3,9 +3,11 @@
 /*Components*/
 @import "components/chaemin/nav-bar.css";
 @import "components/chaemin/width.css";
+@import "components/sangchun/nav-top.css";
 
 /*Screens*/
-
+@import "screens/sangchun/mypage.css";
+@import "screens/sangchun/shopes-1.css";
 /* body {
   font-family: "Ubuntu", sans-serif;
 } */
