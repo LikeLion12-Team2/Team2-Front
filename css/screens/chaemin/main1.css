@@ -10,14 +10,18 @@
   font-weight: 600;
 }
 
-.level {
+.level-top {
   padding: 30px;
   display: flex;
   justify-content: space-between;
 }
 
-.level span {
+.level-top span {
   font-size: 20px;
+}
+
+.level span {
+  margin-right: 30px;
 }
 
 #wateringcan {
