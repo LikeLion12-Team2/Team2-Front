@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <title>shop-redplant</title>
     <style>
-      .shopspage {
+      .shopspage i {
         color: #3b5997;
       }
     </style>
@@ -68,9 +68,11 @@
       <input type="checkbox" id="modal-toggle" />
       <div class="shopes-modal">
         <div class="modal-popup">
-          <p>아이템을 구매하시겠습니까?</p>
+          <div class="modal-header">
+            <p>아이템을 구매하시겠습니까?</p>
+          </div>
           <div class="modal-footer">
-            <label type="button" class="open-btn">예</label>
+            <label for="modal-toggle" class="open-btn">예</label>
             <label for="modal-toggle" class="close-btn">아니오</label>
           </div>
         </div>

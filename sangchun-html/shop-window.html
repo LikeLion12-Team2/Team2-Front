@@ -47,7 +47,19 @@
         <p>바람이 선선히 들어오는 창문</p>
       </div>
       <div class="shopes-bot">
-        <input type="button" value="구매하기" id="shop-buy" />
+        <label for="modal-toggle" id="shop-buy">구매하기</label>
+      </div>
+      <input type="checkbox" id="modal-toggle" />
+      <div class="shopes-modal">
+        <div class="modal-popup">
+          <div class="modal-header">
+            <p>아이템을 구매하시겠습니까?</p>
+          </div>
+          <div class="modal-footer">
+            <label for="modal-toggle" class="open-btn">예</label>
+            <label for="modal-toggle" class="close-btn">아니오</label>
+          </div>
+        </div>
       </div>
       <div class="navbar">
         <div class="mainpage">
