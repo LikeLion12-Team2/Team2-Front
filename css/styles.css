@@ -5,6 +5,7 @@
 @import "components/chaemin/width.css";
 
 /*Screens*/
+@import "screens/chaemin/main1.css";
 
 /* body {
   font-family: "Ubuntu", sans-serif;
