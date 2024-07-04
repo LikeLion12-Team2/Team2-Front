@@ -6,8 +6,8 @@
 
 /*Screens*/
 @import "screens/chaemin/main1.css";
-
-/* body {
+@import "screens/yeonghyeon/login.css";
+@import "screens/yeonghyeon/splash.css"; /* body {
   font-family: "Ubuntu", sans-serif;
 } */
 
