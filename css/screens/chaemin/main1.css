@@ -1,0 +1,65 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.title p {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.level-top {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.level-top span {
+  font-size: 20px;
+}
+
+.level span {
+  margin-right: 30px;
+}
+
+#wateringcan {
+  margin: 50px 10px 0 30px;
+  cursor: pointer;
+  float: left;
+}
+
+#main1-sun {
+  float: right;
+  margin-right: 30px;
+}
+
+.top-img::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#level1plant {
+  display: flex;
+  justify-content: center;
+}
+
+#plantname {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#plantname span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 1cm;
+  height: 40px;
+  width: 100px;
+  font-weight: 600;
+}
