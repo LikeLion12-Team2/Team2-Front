@@ -1,0 +1,74 @@
+#comfort-plant-top {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#comfort-plant-top::before,
+#comfort-plant-top::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #cccccc;
+}
+
+#comfort-plant-top span {
+  font-size: 25px;
+  font-weight: 200;
+}
+
+#comfort-top {
+  color: #3b5997;
+  padding: 0 10px 0 30px;
+}
+
+#plant-top {
+  color: #86d72f;
+  padding-right: 30px;
+}
+
+.select-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.select-info span {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.select-plant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.select-plant1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.select-plant img {
+  width: 130px;
+  height: 130px;
+}
+
+#select-tree {
+  border: 1px solid black;
+  border-radius: 0.5cm;
+}
+
+#select-flower {
+  border: 1px solid black;
+  border-radius: 0.5cm;
+}
