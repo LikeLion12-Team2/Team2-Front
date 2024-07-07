@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>로그인</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-top">
+        <span>로그인</span>
+      </div>
+
+      <div class="center">
+        <div class="info">
+          <p>안녕하세요.</p>
+          <p>스트레스 관리 서비스</p>
+          <span id="comfort-plant">COMFORT PLANT</span><span>입니다.</span>
+        </div>
+
+        <form action="서버url" name="login">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="이메일 입력"
+          />
+          <input
+            id="pwd"
+            type="password"
+            name="pwd"
+            placeholder="비밀번호 입력"
+          />
+          <input id="login-btn" type="submit" value="로그인" />
+        </form>
+
+        <a href="find-password.html" class="find-pwd-btn btn-margin"
+          >비밀번호 찾기</a
+        >
+        <a href="submit.html" class="submit-btn">회원가입</a>
+      </div>
+
+      <div id="splash-screen">
+        <img src="../yeonghyeon-img/comfort-plant.png" alt="로고이미지" />
+      </div>
+    </div>
+  </body>
+</html>
