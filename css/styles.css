@@ -9,6 +9,7 @@
 @import "screens/yeonghyeon/login.css";
 @import "screens/yeonghyeon/splash.css";
 @import "screens/chaemin/select-plant.css";
+@import "screens/chaemin/plant-name.css";
 
 /* body {
   font-family: "Ubuntu", sans-serif;
