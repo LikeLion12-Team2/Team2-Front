@@ -3,6 +3,7 @@
 /*Components*/
 @import "components/chaemin/nav-bar.css";
 @import "components/chaemin/width.css";
+@import "components/yeonghyeon/button.css";
 
 /*Screens*/
 @import "screens/chaemin/main1.css";
@@ -11,6 +12,7 @@
 @import "screens/chaemin/select-plant.css";
 @import "screens/chaemin/plant-name.css";
 @import "screens/chaemin/main2.css";
+@import "screens/yeonghyeon/submit.css";
 
 /* body {
   font-family: "Ubuntu", sans-serif;
