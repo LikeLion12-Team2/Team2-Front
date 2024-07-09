@@ -280,10 +280,6 @@ body {
   background-color: white;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
 input[type="checkbox"]:checked ~ .shopes-modal {
   display: flex; /* 모달을 표시 */
 }
