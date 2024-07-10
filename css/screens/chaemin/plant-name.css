@@ -1,0 +1,19 @@
+.set-plant-name {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.input-plant-name {
+  border: none;
+  border-bottom: 1px dotted black;
+}
+
+.confirm-plant-name {
+  text-align: center;
+  border: none;
+  border-radius: 1cm;
+  width: 233px;
+  height: 70px;
+  margin-top: 100px;
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-top">
+        <a href="login.html"><i class="fa-solid fa-chevron-left"></i></a>
+        <span>회원가입</span>
+      </div>
+
+      <div class="submit-container">
+        <form action="서버url" name="submit">
+          <p>이메일</p>
+          <input
+            class="input-style"
+            type="email"
+            name="email"
+            placeholder="이메일 입력"
+          />
+          <p id="email-info">사용 가능한 이메일입니다.</p>
+          <!-- 사용 불가능한 이메일입니다. -->
+
+          <p>비밀번호</p>
+          <div class="pwd">
+            <input
+              class="input-style"
+              type="password"
+              name="pwd"
+              placeholder="비밀번호 입력"
+            />
+            <img src="../yeonghyeon-img/eye-off.png" alt="eye-off" />
+          </div>
+          <p id="pwd-info">* 숫자와 문자 포함 6~12자리</p>
+          <!-- red -->
+
+          <p>비밀번호 확인</p>
+          <div class="pwd">
+            <input
+              class="input-style"
+              type="password"
+              name="pwd-re"
+              placeholder="비밀번호 재입력"
+            />
+            <img src="../yeonghyeon-img/eye-off.png" alt="eye-off" />
+          </div>
+          <p id="pwd-re-info">비밀번호가 일치합니다.</p>
+          <!-- 비밀번호가 일치하지 않습니다. -->
+
+          <p>닉네임</p>
+          <input
+            class="input-style"
+            type="text"
+            name="nickname"
+            placeholder="닉네임 입력"
+          />
+          <p id="nickname-info">사용 가능한 닉네임입니다.</p>
+          <!-- 아무것도 입력 안할 시 focus, 입력해주세요 창 띄우기 -->
+
+          <input class="last-button" type="submit" value="가입하기" />
+          <!-- 화면 넘어가면 info 다시 hidden (pwd 제외) -->
+          <!-- pwd-info는 다시 초록색 -->
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/72f07bc14e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
