@@ -4,6 +4,7 @@
 @import "components/chaemin/nav-bar.css";
 @import "components/chaemin/width.css";
 @import "components/sangchun/nav-top.css";
+@import "components/yeonghyeon/change-success.css";
 
 /*Screens*/
 @import "screens/sangchun/mypage.css";
