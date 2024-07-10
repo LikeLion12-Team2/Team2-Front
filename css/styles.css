@@ -20,6 +20,7 @@
 @import "screens/chaemin/plant-name.css";
 @import "screens/chaemin/main2.css";
 @import "screens/yeonghyeon/submit.css";
+@import "screens/yeonghyeon/find-password.css";
 
 body {
   font-family: "Ubuntu", sans-serif;
