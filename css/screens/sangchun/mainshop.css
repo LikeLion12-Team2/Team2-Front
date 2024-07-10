@@ -1,0 +1,126 @@
+.shopes-coin {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-top: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+#recent-main-coin {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+}
+#recent-main-coin img {
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+
+.mainshop-title1,
+.mainshop-title2 {
+  display: flex;
+  flex-basis: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px 0px;
+  align-items: center;
+  color: black;
+  padding-left: 30px;
+}
+.mainshop-title1::after,
+.mainshop-title2::after {
+  content: "";
+  flex-grow: 1;
+  margin-left: 10px;
+  background-color: #d9d9d9;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+.mainshop-middle1,
+.mainshop-middle2 {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 30px;
+}
+
+.mainshop-middle1 .mainshop-red,
+.mainshop-middle1 .mainshop-blue,
+.mainshop-middle2 .mainshop-sun,
+.mainshop-middle2 .mainshop-window {
+  position: relative;
+  text-align: center;
+}
+
+.mainshop-middle1 .mainshop-box1 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px gray;
+}
+
+#mainshop-redplant,
+#mainshop-blueplant,
+#mainshop-window {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: cover;
+}
+#mainshop-sun {
+  max-width: 130%;
+  max-height: 130%;
+  object-fit: cover;
+}
+.mainshop-blue,
+.mainshop-window {
+  padding-left: 30px;
+}
+.mainshop-red p,
+.mainshop-blue p,
+.mainshop-sun p,
+.mainshop-window p {
+  padding-top: 20px;
+}
+.redplant-coin,
+.blueplant-coin,
+.sun-coin,
+.window-coin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+}
+.redplant-coin img,
+.blueplant-coin img,
+.sun-coin img,
+.window-coin img {
+  width: 30px;
+  height: 30px;
+  padding-right: 3px;
+}
+.mainshop-middle2 .mainshop-box2 {
+  width: 120px;
+  height: 120px;
+  border-radius: 20%;
+  background-color: white;
+  border: 1px solid #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px gray;
+}
+
+.mainshop-middle2 {
+  padding-bottom: 90px;
+}

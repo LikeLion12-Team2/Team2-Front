@@ -1,0 +1,285 @@
+.shopes-top-container {
+  border-bottom: 2px solid gray;
+}
+.shopes-top {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: black;
+  font-size: 25px;
+  height: 60px;
+  justify-content: space-between;
+}
+.shopes-top::before {
+  content: "";
+  flex-grow: 1;
+  margin-right: 20px;
+  background-color: #cccccc;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+.shopes-top::after {
+  content: "";
+  flex-grow: 1;
+  margin-left: 20px;
+  background-color: #cccccc;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+#shopes-title1 {
+  color: #3b5997;
+  margin-right: 5px;
+}
+#shopes-title2 {
+  color: #86d72f;
+  margin-left: 5px;
+}
+#plant-red,
+#plant-blue {
+  display: block;
+  height: 300px;
+  width: 185px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#sun {
+  display: block;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#window {
+  display: block;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+.shopes-middle1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plant-name-container {
+  display: flex;
+  margin-left: 22px;
+  margin-top: 30px;
+  flex-direction: column;
+}
+#plant-name1 {
+  font-size: 40px;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+
+#coin-img {
+  width: 35px;
+  height: 35px;
+}
+.red-coin {
+  display: flex;
+  align-items: center;
+}
+.red-coin span {
+  font-size: 30px;
+  font-weight: 280;
+  margin-left: 5px;
+}
+/*.shopes-coin {
+  margin-right: 10px;
+  margin-top: 30px;
+}
+#coin-word {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 5px;
+}*/
+
+#recent-coin {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+#recent-coin img {
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: -13px;
+  z-index: 1;
+}
+
+#recent-coin span {
+  font-size: 20px;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  margin-right: 20px;
+  font-weight: 100;
+  text-align: center;
+  padding: 2px 10px 2px 10px;
+  box-shadow: 0px 2px 2px gray;
+}
+
+.shopes-middle2 {
+  text-align: justify;
+  margin-left: 35px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 350;
+}
+.shopes-middle2 p {
+  margin-bottom: 5px;
+}
+.shopes-bot {
+  display: flex;
+  justify-content: center;
+}
+body {
+  overflow-y: auto;
+}
+
+/*.shopes-modal {
+  display: none;  초기에는 모달을 숨김 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-popup {
+  background-color: white;
+  margin: 15% auto;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-popup p {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 20px;
+}
+.open-btn,
+.close-btn {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #5458c9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open-btn:hover,
+.close-btn:hover {
+  background-color: #3b4371;
+} */
+
+#shop-buy,
+#shop-buy2 {
+  width: 80%;
+  max-width: 500px;
+  height: 80px;
+  background-color: #5458c9;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+  box-shadow: 0px 5px 5px gray;
+}
+#shop-buy {
+  margin-top: 20px;
+}
+#shop-buy2 {
+  margin-top: 95px;
+}
+
+.shopes-modal {
+  display: none; /* 초기에는 모달을 숨김 */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-popup {
+  background-color: white;
+  margin: 15% auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-popup .modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 18px;
+  background-color: white;
+}
+
+.modal-popup .modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-footer .close-btn {
+  border-left: 1px solid #d9d9d9;
+}
+.modal-footer button,
+.modal-footer label {
+  flex: 1;
+  margin: 0;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+.modal-footer button:hover,
+.modal-footer label:hover {
+  background-color: #d9d9d9;
+}
+
+.modal-footer .divider {
+  width: 1px;
+  background-color: white;
+}
+
+input[type="checkbox"]:checked ~ .shopes-modal {
+  display: flex; /* 모달을 표시 */
+}

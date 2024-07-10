@@ -1,0 +1,79 @@
+.plant-keep-title {
+  display: flex;
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.keep-middle1 {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.keep-middle2,
+.keep-middle3 {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.keep-middle1 .keep-plant1,
+.keep-middle1 .keep-plant2,
+.keep-middle1 .keep-plant3,
+.keep-middle2 .keep-plant4,
+.keep-middle2 .keep-plant5,
+.keep-middle2 .keep-plant6,
+.keep-middle3 .keep-plant7,
+.keep-middle3 .keep-plant8,
+.keep-middle3 .keep-plant9,
+.keep-middle4 .keep-plant10,
+.keep-middle4 .keep-plant11,
+.keep-middle4 .keep-plant12 {
+  position: relative;
+  text-align: center;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.keep-middle1 .plant-keep-box1,
+.keep-middle2 .plant-keep-box2,
+.keep-middle3 .plant-keep-box3,
+.keep-middle4 .plant-keep-box4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px gray;
+}
+/*
+#img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+  } 
+--이미지 크기--*/
+.keep-plantname {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.keep-planttype {
+  font-weight: 400;
+  font-size: 15px;
+}
+.keep-middle4 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 90px;
+}
+
+/* plant-넘어가고 */

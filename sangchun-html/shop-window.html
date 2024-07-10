@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>shop-window</title>
+    <style>
+      .shopspage i {
+        color: #3b5997;
+      }
+      .shop-buy-button.disabled {
+        background-color: gray;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="shopes-top-container">
+        <div class="shopes-top">
+          <span id="shopes-title1">COMFORT</span>
+          <span id="shopes-title2">PLANT</span>
+        </div>
+        <div id="recent-coin">
+          <img
+            src="/sangchun-html/sangchun-img/fluent-emoji-flat_coin.png"
+            alt="COIN"
+          />
+          <span>20C()</span>
+        </div>
+        <img
+          src="/sangchun-html/sangchun-img/Group 36.png"
+          alt="window"
+          id="window"
+        />
+      </div>
+      <div class="shopes-middle1">
+        <div class="plant-name-container">
+          <h3 id="plant-name1">창문</h3>
+          <div class="red-coin">
+            <img
+              src="/sangchun-html/sangchun-img/fluent-emoji-flat_coin.png"
+              alt="COIN"
+              id="coin-img"
+            /><span>40C</span>
+          </div>
+        </div>
+      </div>
+      <div class="shopes-middle2">
+        <p>바람이 선선히 들어오는 창문</p>
+      </div>
+      <div class="shopes-bot">
+        <label for="modal-toggle" id="shop-buy2">구매하기</label>
+      </div>
+      <input type="checkbox" id="modal-toggle" />
+      <div class="shopes-modal">
+        <div class="modal-popup">
+          <div class="modal-header">
+            <p>아이템을 구매하시겠습니까?</p>
+          </div>
+          <div class="modal-footer">
+            <label for="modal-toggle" class="open-btn">예</label>
+            <label for="modal-toggle" class="close-btn">아니오</label>
+          </div>
+        </div>
+      </div>
+      <div class="navbar">
+        <div class="mainpage">
+          <a href="main1.html"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="shopspage">
+          <a href="shops.html"><i class="fa-solid fa-cart-shopping"></i> </a>
+        </div>
+        <div class="plant-keeppage">
+          <a href="plant-keep.html"> <i class="fa-solid fa-seedling"></i></a>
+        </div>
+        <div class="mypage">
+          <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+    <script src="/js/sangchun-js/shop.js"></script>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/72f07bc14e.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
