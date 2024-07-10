@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js" defer></script>
     <title>main2</title>
   </head>
   <body>
@@ -15,12 +14,21 @@
       </div>
 
       <div class="list-top">
-        <span>진행률: 0%</span>
-        <span>물주기: 0/10회</span>
+        <div id="progress">
+          <span>진행률:</span>
+          <span id="progress">0</span>
+          <span>%</span>
+        </div>
+
+        <div class="num">
+          <span>물주기: </span>
+          <span id="num">0</span>
+          <span>/10회</span>
+        </div>
       </div>
 
       <div class="stress-relief-list">
-        <ul class="checklist">
+        <ul id="checklist">
           <li>
             <label for="item1"><span>1. 건강한 음식으로 식사하기</span></label>
             <input type="checkbox" id="item1" />
@@ -45,9 +53,11 @@
       </div>
 
       <div class="add-list">
-        <button id="add-list">
-          <span>스트레스 해소 활동 추가하기</span>
-        </button>
+        <input
+          type="text"
+          id="add-list"
+          placeholder="스트레스 해소 활동 추가하기"
+        />
       </div>
 
       <div class="watering-button">
@@ -71,6 +81,8 @@
         </div>
       </div>
     </div>
+
+    <script src="../js/chaemin/main2.js" defer></script>
 
     <script
       src="https://kit.fontawesome.com/37fc5900c0.js"

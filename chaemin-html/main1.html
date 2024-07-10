@@ -9,29 +9,36 @@
   <body>
     <div class="container">
       <div class="title"><p>콩이와 1일째</p></div>
-      <div class="level-top">
+      <div class="level-exp">
         <div class="level">
-          <span>콩이 레벨</span>
-          <span>1</span>
+          <span>콩이 레벨</span> <span id="level">1</span>
         </div>
-        <span>경험치 : 1/20</span>
+        <div class="exp"><span>경험치 : </span> <span id="exp">0</span></div>
       </div>
 
       <div class="top-img">
         <div class="watering">
           <a href="main2.html">
-            <img id="wateringcan" src="../chaemin-img/wateringcan.png" alt="" />
+            <img id="wateringcan" src="../wateringcan.png" alt="" />
           </a>
         </div>
 
-        <div id="main1-sun"><img src="../chaemin-img/sun.png" alt="" /></div>
+        <div id="sun"><img src="../sun.png" alt="" /></div>
       </div>
 
-      <div id="level1plant">
-        <img src="../chaemin-img/level1-4-plant.png" alt="level1-4-plant" />
+      <div id="levelplant">
+        <img src="../chaemin-img/plant1.png" alt="plant1" />
       </div>
 
       <div id="plantname"><span>콩이</span></div>
+
+      <div class="plant-storage">
+        <button id="plant-storage">
+          <span>식물 고르기</span>
+        </button>
+      </div>
+
+      <!-- <button id="resetButton">레벨 및 경험치 초기화</button> -->
 
       <div class="navbar">
         <div class="mainpage">
@@ -49,6 +56,7 @@
       </div>
     </div>
 
+    <script src="../js/chaemin/main1.js" defer></script>
     <script
       src="https://kit.fontawesome.com/37fc5900c0.js"
       crossorigin="anonymous"
