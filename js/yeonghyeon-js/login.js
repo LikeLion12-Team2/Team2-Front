@@ -1,16 +1,14 @@
-// let container = document.getElementById("container");
-
-// var API_SERVER_DOMAIN = "https://likelionshop.shop"; 주소
+var API_SERVER_DOMAIN = "http://3.34.241.109:8080";
 
 function submitLoginForm(event) {
   event.preventDefault(); // 기본 제출 동작을 막습니다.
 
   // 사용자가 입력한 이메일과 비밀번호를 가져옵니다.
-  var email = document.getElementById("exampleInputEmail").value;
-  var password = document.getElementById("exampleInputPassword").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("pwd").value;
 
   // 서버에 로그인 요청을 보냅니다.
-  fetch(API_SERVER_DOMAIN + "/login", {
+  fetch(API_SERVER_DOMAIN + "/api/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,7 +31,7 @@ function submitLoginForm(event) {
       setCookie("accessToken", accessToken, 1);
       setCookie("refreshToken", refreshToken, 1);
       // 로그인이 성공하면 다음 동작을 수행합니다.
-      window.location.replace("/index.html");
+      window.location.replace("../chaemin-html/main1.html");
     })
     .catch((error) => {
       alert("아이디나 비밀번호를 다시 확인해주세요", error);
@@ -65,3 +63,8 @@ function getCookie(name) {
   }
   return null;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var loginButton = document.getElementById("login-btn");
+  loginButton.addEventListener("click", submitLoginForm);
+});
