@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.forms["submit"];
-  var submitButton = document.querySelector(".last-button");
+  var submitButton = document.getElementById("submit_btn");
   var API_SERVER_DOMAIN = "http://3.34.241.109:8080";
 
   submitButton.addEventListener("click", function (event) {
