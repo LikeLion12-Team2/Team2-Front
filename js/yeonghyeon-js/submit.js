@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var passwordRe = form.pwd_re.value;
     var nickname = form.nickname.value;
 
+    // 비밀번호 정규식 확인
+    var pwdInfo = document.getElementById("pwd-info");
+    var regExp = /^[A-Za-z0-9]{6,12}$/;
+    if (!regExp.test(password)) {
+      pwdInfo.style.color = "#FF0000";
+      return;
+    } else {
+      pwdInfo.style.color = "#0dcb09";
+    }
+
     // 비밀번호 확인
     if (password !== passwordRe) {
       alert("비밀번호가 일치하지 않습니다.");
@@ -44,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => {
         console.error("회원가입 중 오류 발생:", error);
-        alert("회원가입 중 오류가 발생했습니다. 다시 시도해주세요.");
+        // alert("회원가입 중 오류가 발생했습니다. 다시 시도해주세요.");
+        alert("사용 불가능한 이메일입니다.");
       });
   });
 });
