@@ -31,7 +31,7 @@ function submitLoginForm(event) {
       setCookie("accessToken", accessToken, 1);
       setCookie("refreshToken", refreshToken, 1);
       // 로그인이 성공하면 다음 동작을 수행합니다.
-      window.location.replace("../chaemin-html/main1.html");
+      window.location.replace("../chaemin-html/select-plant.html");
     })
     .catch((error) => {
       alert("아이디나 비밀번호를 다시 확인해주세요", error);
