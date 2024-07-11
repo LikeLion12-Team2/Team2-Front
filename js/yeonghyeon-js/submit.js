@@ -48,3 +48,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+var pwdEye = document.getElementById("pwd_eye");
+var pwdField = document.getElementById("pwd_field");
+
+pwdEye.addEventListener("click", function () {
+  if (pwdEye.src.includes("eye-off.png")) {
+    pwdEye.src = "../yeonghyeon-img/eye-on.png";
+    pwdField.type = "text";
+  } else {
+    pwdEye.src = "../yeonghyeon-img/eye-off.png";
+    pwdField.type = "password";
+  }
+});
+
+var pwdReEye = document.getElementById("pwd_re_eye");
+var pwdReField = document.getElementById("pwd_re_field");
+
+pwdReEye.addEventListener("click", function () {
+  if (pwdReEye.src.includes("eye-off.png")) {
+    pwdReEye.src = "../yeonghyeon-img/eye-on.png";
+    pwdReField.type = "text";
+  } else {
+    pwdReEye.src = "../yeonghyeon-img/eye-off.png";
+    pwdReField.type = "password";
+  }
+});
