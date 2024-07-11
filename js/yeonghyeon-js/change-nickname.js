@@ -26,6 +26,12 @@ function changeNickname(event) {
   // 폼 데이터 수집
   var newNickname = form.new_nickname.value;
 
+  // 공백 입력 시
+  if (newNickname == "") {
+    alert("닉네임을 입력해주세요.");
+    return;
+  }
+
   // 서버로 보낼 데이터 형식
   var requestData = {
     newNickname: newNickname,
