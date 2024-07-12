@@ -1,3 +1,22 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Display coin count from local storage
+  let coinCount = localStorage.getItem("coin-counter");
+  console.log(coinCount);
+  document.getElementById("coin-counter").textContent = `${coinCount}C`;
+
+  // Update coin count in real-time
+  window.addEventListener("storage", function (event) {
+    if (event.key === "coin-counter") {
+      const updatedCoinCount = event.newValue || 0;
+      document.getElementById(
+        "coin-counter"
+      ).textContent = `${updatedCoinCount}C`;
+    }
+  });
+  console.log(localStorage.getItem("coin-counter"));
+  // Handle purchase button click
+  document.querySelector(".open-btn").addEventListener("click", handlePurchase);
+});
 function getCookie(name) {
   var nameEQ = name + "=";
   var cookies = document.cookie.split(";");
