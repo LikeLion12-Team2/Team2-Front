@@ -48,8 +48,23 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!response.ok) {
           throw new Error("서버 응답이 실패했습니다.");
         }
-        console.log(response);
+        return response.text();
+      }) // 응답을 텍스트로 변환
+      .then((responseText) => {
+        console.log(responseText);
         alert("회원가입이 완료되었습니다.");
+
+        // userId 추출 및 localStorage에 저장
+        var userIdMatch = responseText.match(/userId: (\d+)/);
+        if (userIdMatch) {
+          var userId = parseInt(userIdMatch[1], 10);
+          localStorage.setItem("userId", userId);
+          console.log("userId가 localStorage에 저장되었습니다:", userId);
+          console.log(localStorage.getItem("userId"));
+        } else {
+          console.log("userId를 찾을 수 없습니다.");
+        }
+
         window.location.href = "../yeonghyeon-html/login.html";
       })
       .catch((error) => {
