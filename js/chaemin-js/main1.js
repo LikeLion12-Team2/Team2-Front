@@ -1,3 +1,20 @@
+var API_SERVER_DOMAIN = "http://3.34.241.109:8080";
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var cookies = document.cookie.split(";");
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i];
+    while (cookie.charAt(0) === " ") {
+      cookie = cookie.substring(1, cookie.length);
+    }
+    if (cookie.indexOf(nameEQ) === 0) {
+      return cookie.substring(nameEQ.length, cookie.length);
+    }
+  }
+  return null;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const levelDisplay = document.querySelector("#level");
   const expDisplay = document.querySelector("#exp");
@@ -73,30 +90,34 @@ document.addEventListener("DOMContentLoaded", () => {
         plantImage.src = plantImages[1];
       } else if (level <= 9) {
         plantImage.src = plantImages[2];
+        plantImage.style.width = "250px";
+        plantImage.style.height = "250px";
       } else {
         plantImage.src = plantImages[3];
         wateringcanImage.style.display = "none";
         sunImage.style.display = "none";
         plantImage.classList.add("location");
         plantButton.style.display = "block";
+        plantImage.style.width = "230px";
+        plantImage.style.height = "230px";
       }
     };
 
     updateLevelDisplay();
   };
 
-  // 초기화 버튼 클릭 시 레벨과 경험치 초기화
-  const resetLevelAndExp = () => {
-    localStorage.setItem("level", "1");
-    localStorage.setItem("exp", "0");
-    updateExpAndLevel();
-  };
+  // // 초기화 버튼 클릭 시 레벨과 경험치 초기화
+  // const resetLevelAndExp = () => {
+  //   localStorage.setItem("level", "1");
+  //   localStorage.setItem("exp", "0");
+  //   updateExpAndLevel();
+  // };
 
-  // 초기화 버튼에 이벤트 리스너 추가
+  // //초기화 버튼에 이벤트 리스너 추가
   // const resetButton = document.querySelector("#resetButton");
   // resetButton.addEventListener("click", resetLevelAndExp);
 
-  // 7레벨 설정 버튼 클릭 시 레벨 7로 설정
+  // //  7레벨 설정 버튼 클릭 시 레벨 7로 설정
   // setLevelButton.addEventListener("click", () => {
   //   localStorage.setItem("level", "7");
   //   localStorage.setItem("exp", "0");
