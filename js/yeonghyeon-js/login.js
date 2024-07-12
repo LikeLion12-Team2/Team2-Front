@@ -31,6 +31,7 @@ function submitLoginForm(event) {
       setCookie("accessToken", accessToken, 1);
       setCookie("refreshToken", refreshToken, 1);
       // 로그인이 성공하면 다음 동작을 수행합니다.
+      getCoinInfo(accessToken);
       window.location.replace("../chaemin-html/select-plant.html");
     })
     .catch((error) => {
@@ -88,8 +89,4 @@ function getCoinInfo(accessToken) {
 document.addEventListener("DOMContentLoaded", function () {
   var loginButton = document.getElementById("login-btn");
   loginButton.addEventListener("click", submitLoginForm);
-
-  // 쿠키에서 accessToken 가져오기
-  var accessToken = getCookie("accessToken");
-  getCoinInfo(accessToken);
 });
