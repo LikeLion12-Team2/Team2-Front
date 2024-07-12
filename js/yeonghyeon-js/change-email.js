@@ -26,7 +26,9 @@ function checkPwd(event) {
   window.location.href = "../yeonghyeon-html/change-email-2";
 }
 
-function changeEmail(event) {}
+function changeEmail(event) {
+  console.log(originalPwd);
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   var changeEmailNextBtn = document.getElementById("change_email_next_btn");
