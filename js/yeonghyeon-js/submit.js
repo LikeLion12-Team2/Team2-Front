@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.forms["submit"];
-  var submitButton = document.querySelector(".last-button");
+  var submitButton = document.getElementById("submit_btn");
   var API_SERVER_DOMAIN = "http://3.34.241.109:8080";
 
   submitButton.addEventListener("click", function (event) {
@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var password = form.pwd.value;
     var passwordRe = form.pwd_re.value;
     var nickname = form.nickname.value;
+
+    // 비밀번호 정규식 확인
+    var pwdInfo = document.getElementById("pwd-info");
+    var regExp = /^[A-Za-z0-9]{6,12}$/;
+    if (!regExp.test(password)) {
+      pwdInfo.style.color = "#FF0000";
+      return;
+    } else {
+      pwdInfo.style.color = "#0dcb09";
+    }
 
     // 비밀번호 확인
     if (password !== passwordRe) {
@@ -38,13 +48,55 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!response.ok) {
           throw new Error("서버 응답이 실패했습니다.");
         }
-        console.log(response);
+        return response.text();
+      }) // 응답을 텍스트로 변환
+      .then((responseText) => {
+        console.log(responseText);
         alert("회원가입이 완료되었습니다.");
+
+        // userId 추출 및 localStorage에 저장
+        var userIdMatch = responseText.match(/userId: (\d+)/);
+        if (userIdMatch) {
+          var userId = parseInt(userIdMatch[1], 10);
+          localStorage.setItem("userId", userId);
+          console.log("userId가 localStorage에 저장되었습니다:", userId);
+          console.log(localStorage.getItem("userId"));
+        } else {
+          console.log("userId를 찾을 수 없습니다.");
+        }
+
         window.location.href = "../yeonghyeon-html/login.html";
       })
       .catch((error) => {
         console.error("회원가입 중 오류 발생:", error);
-        alert("회원가입 중 오류가 발생했습니다. 다시 시도해주세요.");
+        // alert("회원가입 중 오류가 발생했습니다. 다시 시도해주세요.");
+        alert("사용 불가능한 이메일입니다.");
       });
   });
+});
+
+var pwdEye = document.getElementById("pwd_eye");
+var pwdField = document.getElementById("pwd_field");
+
+pwdEye.addEventListener("click", function () {
+  if (pwdEye.src.includes("eye-off.png")) {
+    pwdEye.src = "../yeonghyeon-img/eye-on.png";
+    pwdField.type = "text";
+  } else {
+    pwdEye.src = "../yeonghyeon-img/eye-off.png";
+    pwdField.type = "password";
+  }
+});
+
+var pwdReEye = document.getElementById("pwd_re_eye");
+var pwdReField = document.getElementById("pwd_re_field");
+
+pwdReEye.addEventListener("click", function () {
+  if (pwdReEye.src.includes("eye-off.png")) {
+    pwdReEye.src = "../yeonghyeon-img/eye-on.png";
+    pwdReField.type = "text";
+  } else {
+    pwdReEye.src = "../yeonghyeon-img/eye-off.png";
+    pwdReField.type = "password";
+  }
 });

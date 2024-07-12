@@ -31,7 +31,8 @@ function submitLoginForm(event) {
       setCookie("accessToken", accessToken, 1);
       setCookie("refreshToken", refreshToken, 1);
       // 로그인이 성공하면 다음 동작을 수행합니다.
-      window.location.replace("../chaemin-html/main1.html");
+      getCoinInfo(accessToken);
+      window.location.replace("../chaemin-html/select-plant.html");
     })
     .catch((error) => {
       alert("아이디나 비밀번호를 다시 확인해주세요", error);
@@ -62,6 +63,27 @@ function getCookie(name) {
     }
   }
   return null;
+}
+
+function getCoinInfo(accessToken) {
+  var userId = localStorage.getItem("userId");
+  return fetch(`${API_SERVER_DOMAIN}/api/user/${userId}`, {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + accessToken,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Coin info request failed");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("코인 개수: " + data.coin);
+      localStorage.setItem("coin-counter", data.coin);
+      console.log(localStorage.getItem("coin-counter"));
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
