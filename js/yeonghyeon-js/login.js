@@ -65,7 +65,6 @@ function getCookie(name) {
   return null;
 }
 
-var userId = localStorage.getItem("userId");
 function getCoinInfo(accessToken) {
   return fetch(`${API_SERVER_DOMAIN}/api/user/${userId}`, {
     method: "GET",
