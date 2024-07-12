@@ -64,7 +64,32 @@ function getCookie(name) {
   return null;
 }
 
+var userId = localStorage.getItem("userId");
+function getCoinInfo(accessToken) {
+  return fetch(`${API_SERVER_DOMAIN}/api/user/${userId}`, {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + accessToken,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Coin info request failed");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("코인 개수: " + data.coin);
+      localStorage.setItem("coin-counter", data.coin);
+      console.log(localStorage.getItem("coin-counter"));
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var loginButton = document.getElementById("login-btn");
   loginButton.addEventListener("click", submitLoginForm);
+
+  // 쿠키에서 accessToken 가져오기
+  var accessToken = getCookie("accessToken");
+  getCoinInfo(accessToken);
 });
