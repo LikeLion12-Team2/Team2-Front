@@ -1,67 +1,108 @@
-const levelDisplay = document.querySelector("#level");
-const expDisplay = document.querySelector("#exp");
-const plantImage = document.querySelector("#levelplant img");
-const wateringcanImage = document.querySelector("#wateringcan");
-const sunImage = document.querySelector("#sun");
-const plantButton = document.querySelector("#plant-storage");
+document.addEventListener("DOMContentLoaded", () => {
+  const levelDisplay = document.querySelector("#level");
+  const expDisplay = document.querySelector("#exp");
+  const plantImage = document.querySelector("#levelplant img");
+  const wateringcanImage = document.querySelector("#wateringcan");
+  const sunImage = document.querySelector("#main1-sun img");
+  const plantButton = document.querySelector("#plant-storage");
+  const setLevelButton = document.querySelector("#sevenButton");
 
-const levelExp = [2, 4, 5, 8, 10, 12, 14, 16, 18, 20]; // 각 레벨의 총 경험치
-const plantImages = [
-  "../chaemin-img/plant1.png", // 1-3 레벨
-  "../chaemin-img/plant2.png", // 4-6 레벨
-  "../chaemin-img/flower3.png", // 7-9 레벨
-  "../chaemin-img/flower4.png", // 10 레벨
-];
+  // 식물 이름 설정
+  const plantNameElements = document.querySelectorAll(".plant-name-display");
+  const plantName = localStorage.getItem("plantName");
 
-let exp = parseInt(localStorage.getItem("exp")) || 0;
-let level = parseInt(localStorage.getItem("level")) || 1;
-
-plantButton.style.display = "none";
-
-const updateExpAndLevel = () => {
-  let requiredExp = levelExp[level - 1];
-  while (exp >= requiredExp && level < 10) {
-    exp -= requiredExp;
-    level++;
-    requiredExp = levelExp[level - 1];
-  }
-
-  levelDisplay.textContent = level;
-  expDisplay.textContent = `${exp} / ${requiredExp}`;
-
-  if (level <= 3) {
-    plantImage.src = plantImages[0];
-  } else if (level <= 6) {
-    plantImage.src = plantImages[1];
-  } else if (level <= 9) {
-    plantImage.src = plantImages[2];
+  if (plantName) {
+    plantNameElements.forEach((element) => {
+      element.textContent = plantName;
+    });
   } else {
-    plantImage.src = plantImages[3];
-    wateringcanImage.style.display = "none";
-    sunImage.style.display = "none";
-    plantImage.classList.add("location");
-    plantButton.style.display = "block";
+    plantNameElements.forEach((element) => {
+      element.textContent = "이름이 설정되지 않았습니다.";
+    });
   }
-};
 
-updateExpAndLevel();
+  // 식물 종류에 따라 이미지 설정
+  const setPlantImages = () => {
+    const plantType = localStorage.getItem("plantType");
 
-const resetLevelAndExp = () => {
-  // 레벨과 경험치 변수 초기화
-  level = 1;
-  exp = 0;
+    let plantImages;
 
-  // localStorage에서 레벨과 경험치 정보 삭제
-  localStorage.removeItem("level");
-  localStorage.removeItem("exp");
+    if (plantType === "TREE") {
+      plantImages = [
+        "../chaemin-img/plant1.png", // 1-3 레벨
+        "../chaemin-img/plant2.png", // 4-6 레벨
+        "../chaemin-img/tree3.png", // 7-9 레벨
+        "../chaemin-img/tree4.png", // 10 레벨
+      ];
+    } else {
+      plantImages = [
+        "../chaemin-img/plant1.png", // 1-3 레벨
+        "../chaemin-img/plant2.png", // 4-6 레벨
+        "../chaemin-img/flower3.png", // 7-9 레벨
+        "../chaemin-img/flower4.png", // 10 레벨
+      ];
+    }
 
-  // 화면에 레벨과 경험치 정보 업데이트
+    return plantImages; // 배열 반환
+  };
+
+  plantButton.style.display = "none";
+
+  // 레벨과 경험치 업데이트
+  const updateExpAndLevel = () => {
+    const levelExp = [2, 4, 5, 8, 10, 12, 14, 16, 18, 20]; // 각 레벨의 총 경험치
+    let exp = parseInt(localStorage.getItem("exp")) || 0;
+    let level = parseInt(localStorage.getItem("level")) || 1;
+
+    const updateLevelDisplay = () => {
+      let requiredExp = levelExp[level - 1];
+      while (exp >= requiredExp && level < 10) {
+        exp -= requiredExp;
+        level++;
+        requiredExp = levelExp[level - 1];
+      }
+
+      levelDisplay.textContent = level;
+      expDisplay.textContent = `${exp} / ${requiredExp}`;
+
+      const plantImages = setPlantImages(); // 함수 호출 및 결과 할당
+
+      if (level <= 3) {
+        plantImage.src = plantImages[0];
+      } else if (level <= 6) {
+        plantImage.src = plantImages[1];
+      } else if (level <= 9) {
+        plantImage.src = plantImages[2];
+      } else {
+        plantImage.src = plantImages[3];
+        wateringcanImage.style.display = "none";
+        sunImage.style.display = "none";
+        plantImage.classList.add("location");
+        plantButton.style.display = "block";
+      }
+    };
+
+    updateLevelDisplay();
+  };
+
+  // 초기화 버튼 클릭 시 레벨과 경험치 초기화
+  const resetLevelAndExp = () => {
+    localStorage.setItem("level", "1");
+    localStorage.setItem("exp", "0");
+    updateExpAndLevel();
+  };
+
+  // 초기화 버튼에 이벤트 리스너 추가
+  // const resetButton = document.querySelector("#resetButton");
+  // resetButton.addEventListener("click", resetLevelAndExp);
+
+  // 7레벨 설정 버튼 클릭 시 레벨 7로 설정
+  // setLevelButton.addEventListener("click", () => {
+  //   localStorage.setItem("level", "7");
+  //   localStorage.setItem("exp", "0");
+  //   updateExpAndLevel();
+  // });
+
+  // 페이지 로드 시 실행
   updateExpAndLevel();
-};
-
-// 초기화 버튼에 이벤트 리스너 추가
-const resetButton = document.querySelector("#resetButton");
-resetButton.addEventListener("click", resetLevelAndExp);
-
-// 페이지 로드 시 초기화 함수 호출하여 화면에 초기 상태 표시
-updateExpAndLevel();
+});
