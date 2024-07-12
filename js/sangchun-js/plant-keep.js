@@ -4,13 +4,15 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(";").shift();
   return null;
 }
-document.addEventListener("DOMContentLoaded", () => {
-  // Retrieve userId and accessToken from local storage
-  const userId = localStorage.getItem("userId");
-  const accessToken = getCookie("accessToken");
 
-  if (userId && accessToken) {
-    const accessToken = getCookie("accessToken");
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve plantId and accessToken from local storage
+
+  const plantId = JSON.parse(localStorage.getItem("plantId"));
+  const accessToken = getCookie("accessToken");
+  const userId = localStorage.getItem("userId"); // Assuming userId is stored in local storage
+
+  if (plantId && accessToken && userId) {
     const url = `http://3.34.241.109:8080/api/plant/allPlant/${userId}`;
 
     fetch(url, {
@@ -34,28 +36,27 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("There was a problem with the fetch operation:", error);
       });
   } else {
-    console.error("User ID not found in local storage");
+    console.error("Required data not found in local storage or cookies");
   }
 });
-console.log(getCookie("accessToken"));
-console.log(localStorage.getItem("userId"));
 
 function displayPlants(plants) {
-  const plantContainer = document.querySelector(".plant-container"); // 식물 컨테이너 선택
+  const plantContainer = document.querySelector(".container"); // Select plant container
 
-  let keepIndex = 1; // plant-keep의 숫자 초기화
-  let middleIndex = 1; // keep-middle의 숫자 초기화
+  let keepIndex = 1; // Initialize plant-keep number
+  let middleIndex = 1; // Initialize keep-middle number
 
   plants.forEach((plant) => {
+    // Check if the plant status is "Complete"
     if (plant.status === "Complete") {
       const plantDiv = document.createElement("div");
-      plantDiv.className = `keep-middle${middleIndex}`; // middle 숫자 설정
+      plantDiv.className = `keep-middle${middleIndex}`; // Set middle number
 
       let imageUrl;
       if (plant.type === "FLOWER") {
-        imageUrl = "/sangchun-html/sangchun-img/Group 83.png"; // 꽃 이미지 경로 입력
+        imageUrl = "/sangchun-html/sangchun-img/Group 83.png"; // Flower image path
       } else if (plant.type === "TREE") {
-        imageUrl = "/sangchun-html/sangchun-img/noto_deciduous-tree.png"; // 나무 이미지 경로 입력
+        imageUrl = "/sangchun-html/sangchun-img/noto_deciduous-tree.png"; // Tree image path
       }
 
       plantDiv.innerHTML = `
@@ -70,13 +71,14 @@ function displayPlants(plants) {
         </div>
       `;
 
-      plantContainer.appendChild(plantDiv); // 생성한 식물 DIV 추가
+      plantContainer.appendChild(plantDiv); // Append created plant DIV
 
-      keepIndex++; // 다음 plant-keep 번호 증가
+      keepIndex++; // Increment plant-keep number
       if (middleIndex < 4) {
-        // keep-middle의 최대는 4
+        // Maximum of 4 for keep-middle
         middleIndex++;
       }
     }
   });
 }
+console.log(localStorage.getItem("plantId"));
