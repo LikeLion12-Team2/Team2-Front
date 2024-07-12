@@ -64,8 +64,9 @@ function getCookie(name) {
   }
   return null;
 }
-var userId = localStorage.getItem("userId");
+
 function getCoinInfo(accessToken) {
+  var userId = localStorage.getItem("userId");
   return fetch(`${API_SERVER_DOMAIN}/api/user/${userId}`, {
     method: "GET",
     headers: {
@@ -82,6 +83,7 @@ function getCoinInfo(accessToken) {
       console.log("코인 개수: " + data.coin);
       localStorage.setItem("coin-counter", data.coin);
       console.log(localStorage.getItem("coin-counter"));
+      localStorage.setItem("nickname", data.nickname);
     });
 }
 
