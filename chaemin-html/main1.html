@@ -5,18 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>main1</title>
-    <style>
-      .mainpage i {
-        color: #3b5997;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
-      <div class="title"><p>콩이와 1일째</p></div>
+      <div class="title">
+        <p><span class="plant-name-display"></span>와 1일째</p>
+      </div>
       <div class="level-exp">
         <div class="level">
-          <span>콩이 레벨</span> <span id="level">1</span>
+          <span><span class="plant-name-display"></span> 레벨</span>
+          <span id="level">1</span>
         </div>
         <div class="exp"><span>경험치 : </span> <span id="exp">0</span></div>
       </div>
@@ -35,36 +33,29 @@
         <img src="../chaemin-img/plant1.png" alt="plant1" />
       </div>
 
-      <div id="plantname"><span>콩이</span></div>
+      <div id="plantname"><span class="plant-name-display"></span></div>
 
       <div class="plant-storage">
         <button id="plant-storage">
-          <span>식물 고르기</span>
+          <a href="select-plant.html"><span>식물 고르기</span></a>
         </button>
       </div>
 
-      <!-- <button id="resetButton">레벨 및 경험치 초기화</button> -->
+      <!-- <button id="resetButton">레벨 및 경험치 초기화</button>
+      <button id="sevenButton">7레벨</button> -->
 
       <div class="navbar">
         <div class="mainpage">
-          <a href="/chaemin-html/main1.html"
-            ><i class="fa-solid fa-house"></i
-          ></a>
+          <a href="main1.html"><i class="fa-solid fa-house"></i></a>
         </div>
         <div class="shopspage">
-          <a href="/sangchun-html/shops.html"
-            ><i class="fa-solid fa-cart-shopping"></i>
-          </a>
+          <a href="shops.html"><i class="fa-solid fa-cart-shopping"></i> </a>
         </div>
         <div class="plant-keeppage">
-          <a href="/sangchun-html/plant-keep.html">
-            <i class="fa-solid fa-seedling"></i
-          ></a>
+          <a href="plant-keep.html"> <i class="fa-solid fa-seedling"></i></a>
         </div>
         <div class="mypage">
-          <a href="/sangchun-html/mypage.html"
-            ><i class="fa-solid fa-user"></i
-          ></a>
+          <a href="mypage.html"><i class="fa-solid fa-user"></i></a>
         </div>
       </div>
     </div>
