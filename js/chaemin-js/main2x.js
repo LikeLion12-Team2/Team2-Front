@@ -1,4 +1,4 @@
-var API_SERVER_DOMAIN = "http://3.34.241.109:8080";
+const API_SERVER_DOMAIN = "http://3.34.241.109:8080";
 
 function getCookie(name) {
   var nameEQ = name + "=";
@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let initiallyChecked = new Set();
 
   const updateCount = () => {
-    todoCount.textContent = totalWateringCount;
+    const currentCheckedCount = countChecked();
+    todoCount.textContent = totalWateringCount + currentCheckedCount;
   };
 
   const initializePage = () => {
@@ -116,11 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const handleCheckboxChange = (checkbox, span, activityId) => {
-    if (initiallyChecked.has(checkbox) && !checkbox.checked) {
-      checkbox.checked = true;
-      return;
-    }
-
     if (checkbox.checked) {
       span.style.textDecoration = "line-through";
       exp += 1;
@@ -137,27 +133,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const accessToken = getCookie("accessToken");
 
-    fetch(`${API_SERVER_DOMAIN}/api/activity/check`, {
+    fetch(`${API_SERVER_DOMAIN}/api/activity/check?activityId=${activityId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + accessToken,
       },
-      body: JSON.stringify({
-        activityId: activityId,
-        isChecked: true,
-      }),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to update activity check status.");
         }
-        return response.json(); // JSON 파싱
       })
       .then((data) => {
-        // 파싱된 JSON 데이터를 사용
         console.log("Successfully updated activity check status!", data);
-        // 여기서 data는 JSON 형식의 JavaScript 객체입니다.
+      })
+      .catch((error) => {
+        console.error("Error updating activity check status:", error);
+        alert("활동 체크 상태 업데이트에 실패하였습니다.");
+      });
+
+    fetch(
+      `${API_SERVER_DOMAIN}/api/activity/uncheck?activityId=${activityId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to update activity check status.");
+        }
+      })
+      .then((data) => {
+        console.log("Successfully updated activity check status!", data);
       })
       .catch((error) => {
         console.error("Error updating activity check status:", error);
